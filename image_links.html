@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Links</title>
+  <style>
+    /* Add your CSS styling here */
+    nav {
+        background-color: #2e72c0;
+            color: white;
+            padding: 10px;
+            text-align: center;
+    }
+    nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+    }
+    nav a:hover {
+            text-decoration: underline;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    header,main {
+      padding: 20px;
+    }
+    section {
+        margin: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1> Welcome Aboard, Where You Find Serendipity</h1>
+</header>
+
+<nav>
+  <ul>
+    <a href="#Home">Home</a>
+    <a href="#Gallery">Gallery</a>
+    <a href="#Menu">Menu</a>
+  </ul>
+</nav>
+
+  <section id="Home">
+    <h2>Home</h2>
+    <p>Welcome to our website! Where we specialize in technology, nature, and food.</p>
+    <figure>
+    <img src="https://apps.eui.eu/EUI_API/EVENTSV2/Images/Image?id=1584" alt="Technological Ai Image" loading="lazy">
+     <figcaption>AI Technological Advanced Image</figcaption>
+    </figure>
+  </section>
+
+  <section id="Gallery">
+    <h2>Gallery</h2>
+    <p>Take a Dive Into the World of Mother Nature.</p>
+    <div class="Gallery">
+      <img src="https://jooinn.com/images/beauty-of-nature-24.jpg" title="Nature Image 1" alt="Nature Image 1" style="max-width:33%; height:300px;" loading="lazy">
+      <img src="https://s1.1zoom.me/big0/725/USA_Desert_ArizonaSand_508125.jpg" title="Nature Image 2" alt="Nature Image 2" style="max-width: 33%;height:300px;" loading="lazy">
+      <img src="https://th.bing.com/th/id/OIP.OSdxY784K6n_JmHK4I7QCAEgDY?rs=1&pid=ImgDetMain" title="Nature Image 3" alt="Nature Image 3" style="max-width: 33%;height:300px;" loading="lazy">
+    </div>
+  </section>
+
+  <section id="Menu">
+    <h2>Menu</h2>
+    <p>Relish the delicacies from Intercontinental Dinnings, Traditional Home Cooked Meals to Local Cuisines.</p>
+    <ul>
+      <li><img src="https://anaintercontinental-tokyo.jp/wp-content/uploads/2018/07/karin01.jpg" alt="Intercontinental Dishes From Japan" style="height: 400px; width: 600px;" loading="lazy">Intercontinental Dish From Japan</li>
+      <li><img src="https://media.timeout.com/images/105442371/image.jpg" alt="Traditional Dishes From Kuala Lumpur" style="width: 600px;height: 400px;" loading="lazy">Traditional Dishes From Kuala Lumpur</li>
+      <li><img src="https://www.pointoneafricancuisine.com/wp-content/uploads/2021/05/Egusi-1536x1152.jpeg" alt="Local Nigerian Food" style="width: 600px; height: 400px;" loading="lazy">Local Nigerian Food</li>
+    </ul>
+  </section>
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('href').substring(1);
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        });
+    });
+</script>
+</body>
+</html>
